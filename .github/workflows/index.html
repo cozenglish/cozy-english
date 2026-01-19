@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cozy English Academy</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-book-open"></i>
+                <h1>Cozy English Academy</h1>
+            </div>
+            <p class="tagline">Learn English with confidence</p>
+            <div class="author">By Farangis Rajabova</div>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="container">
+        <!-- Home Page -->
+        <section id="home-page" class="page active">
+            <div class="welcome-section">
+                <div class="quote-box">
+                    <i class="fas fa-quote-left"></i>
+                    <p class="quote">"The limits of my language mean the limits of my world."</p>
+                    <p class="quote-author">- Ludwig Wittgenstein</p>
+                    <i class="fas fa-quote-right"></i>
+                </div>
+                
+                <div class="intro-text">
+                    <p>Welcome to Cozy English Academy! 🌟</p>
+                    <p>Improve your English grammar and vocabulary through interactive tests and exercises.</p>
+                    <p>Choose a category to begin your learning journey!</p>
+                </div>
+                
+                <div class="main-buttons">
+                    <button id="grammar-btn" class="main-btn">
+                        <i class="fas fa-language"></i>
+                        <span>Grammar</span>
+                    </button>
+                    <button id="vocabulary-btn" class="main-btn">
+                        <i class="fas fa-book"></i>
+                        <span>Vocabulary</span>
+                    </button>
+                </div>
+                
+                <div class="features">
+                    <div class="feature">
+                        <i class="fas fa-graduation-cap"></i>
+                        <p>23 Grammar Topics</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-list-alt"></i>
+                        <p>23 Vocabulary Sets</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-mobile-alt"></i>
+                        <p>Mobile Friendly</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-chart-line"></i>
+                        <p>Progress Tracking</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Grammar Menu -->
+        <section id="grammar-menu" class="page">
+            <div class="page-header">
+                <button class="back-btn">
+                    <i class="fas fa-arrow-left"></i> Back
+                </button>
+                <h2><i class="fas fa-language"></i> Grammar Section</h2>
+            </div>
+            
+            <div class="menu-options">
+                <div class="menu-card overall-test" id="overall-grammar-test">
+                    <div class="menu-icon">
+                        <i class="fas fa-clipboard-list"></i>
+                    </div>
+                    <h3>Overall Grammar Test</h3>
+                    <p>30 random questions covering all grammar topics</p>
+                    <div class="test-info">
+                        <span><i class="fas fa-question-circle"></i> 30 questions</span>
+                        <span><i class="fas fa-clock"></i> 15-20 min</span>
+                    </div>
+                </div>
+                
+                <div class="menu-card topic-select" id="grammar-topics">
+                    <div class="menu-icon">
+                        <i class="fas fa-list-ol"></i>
+                    </div>
+                    <h3>Choose Grammar Topic</h3>
+                    <p>Select a specific grammar topic to practice</p>
+                    <div class="test-info">
+                        <span><i class="fas fa-question-circle"></i> 10 questions each</span>
+                        <span><i class="fas fa-clock"></i> 5-10 min</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Vocabulary Menu -->
+        <section id="vocabulary-menu" class="page">
+            <div class="page-header">
+                <button class="back-btn">
+                    <i class="fas fa-arrow-left"></i> Back
+                </button>
+                <h2><i class="fas fa-book"></i> Vocabulary Section</h2>
+            </div>
+            
+            <div class="menu-options">
+                <div class="menu-card overall-test" id="overall-vocabulary-test">
+                    <div class="menu-icon">
+                        <i class="fas fa-clipboard-list"></i>
+                    </div>
+                    <h3>Overall Vocabulary Test</h3>
+                    <p>30 random vocabulary questions based on grammar topics</p>
+                    <div class="test-info">
+                        <span><i class="fas fa-question-circle"></i> 30 questions</span>
+                        <span><i class="fas fa-clock"></i> 15-20 min</span>
+                    </div>
+                </div>
+                
+                <div class="menu-card topic-select" id="vocabulary-topics">
+                    <div class="menu-icon">
+                        <i class="fas fa-list-ol"></i>
+                    </div>
+                    <h3>Choose Vocabulary Topic</h3>
+                    <p>Select a vocabulary set based on grammar topics</p>
+                    <div class="test-info">
+                        <span><i class="fas fa-question-circle"></i> 10 questions each</span>
+                        <span><i class="fas fa-clock"></i> 5-10 min</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Topic Selection -->
+        <section id="topic-selection" class="page">
+            <div class="page-header">
+                <button class="back-btn">
+                    <i class="fas fa-arrow-left"></i> Back
+                </button>
+                <h2 id="topic-selection-title">Select a Topic</h2>
+            </div>
+            
+            <div class="topics-grid" id="topics-container">
+                <!-- Topics will be dynamically added here -->
+            </div>
+        </section>
+
+        <!-- Test Section -->
+        <section id="test-section" class="page">
+            <div class="test-header">
+                <div class="test-progress">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progress-fill"></div>
+                    </div>
+                    <div class="progress-text">
+                        Question <span id="current-question">1</span> of <span id="total-questions">10</span>
+                    </div>
+                </div>
+                
+                <div class="test-title">
+                    <h3 id="test-topic">Grammar Test</h3>
+                    <div class="score-display">
+                        <i class="fas fa-star"></i>
+                        <span>Score: <span id="current-score">0</span>%</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="test-content">
+                <div class="question-container">
+                    <div class="question-counter">
+                        <span class="question-type" id="question-type">Multiple Choice</span>
+                    </div>
+                    
+                    <div class="question-text" id="question-text">
+                        Loading question...
+                    </div>
+                    
+                    <div class="options-container" id="options-container">
+                        <!-- Options will be dynamically added here -->
+                    </div>
+                    
+                    <div class="fill-blank-container" id="fill-blank-container">
+                        <input type="text" id="fill-blank-input" placeholder="Type your answer here...">
+                        <button id="submit-blank-btn" class="btn">Submit Answer</button>
+                    </div>
+                    
+                    <div class="feedback" id="feedback">
+                        <!-- Feedback will appear here -->
+                    </div>
+                </div>
+                
+                <div class="navigation-buttons">
+                    <button id="prev-btn" class="nav-btn">
+                        <i class="fas fa-arrow-left"></i> Previous
+                    </button>
+                    <button id="next-btn" class="nav-btn" disabled>
+                        Next <i class="fas fa-arrow-right"></i>
+                    </button>
+                    <button id="finish-btn" class="nav-btn finish-btn">
+                        Finish Test <i class="fas fa-flag-checkered"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Results Section -->
+        <section id="results-section" class="page">
+            <div class="results-container">
+                <div class="results-header">
+                    <div class="results-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h2>Test Completed!</h2>
+                    <p id="test-completed-message">You've completed the test</p>
+                </div>
+                
+                <div class="results-stats">
+                    <div class="stat-card correct">
+                        <div class="stat-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="stat-value" id="correct-answers">0</div>
+                        <div class="stat-label">Correct</div>
+                    </div>
+                    
+                    <div class="stat-card total">
+                        <div class="stat-icon">
+                            <i class="fas fa-question-circle"></i>
+                        </div>
+                        <div class="stat-value" id="total-answers">0</div>
+                        <div class="stat-label">Total</div>
+                    </div>
+                    
+                    <div class="stat-card wrong">
+                        <div class="stat-icon">
+                            <i class="fas fa-times-circle"></i>
+                        </div>
+                        <div class="stat-value" id="wrong-answers">0</div>
+                        <div class="stat-label">Wrong</div>
+                    </div>
+                </div>
+                
+                <div class="score-display-large">
+                    <div class="score-circle">
+                        <svg width="120" height="120">
+                            <circle class="score-circle-bg" cx="60" cy="60" r="54"></circle>
+                            <circle class="score-circle-fill" cx="60" cy="60" r="54"></circle>
+                        </svg>
+                        <div class="score-percentage" id="final-score">0%</div>
+                    </div>
+                    <div class="score-grade" id="score-grade">Try Again</div>
+                </div>
+                
+                <div class="results-breakdown">
+                    <h3><i class="fas fa-chart-bar"></i> Performance Breakdown</h3>
+                    <div class="breakdown-content" id="breakdown-content">
+                        <!-- Breakdown will be added here -->
+                    </div>
+                </div>
+                
+                <div class="results-actions">
+                    <button id="retry-btn" class="action-btn">
+                        <i class="fas fa-redo"></i> Try Again
+                    </button>
+                    <button id="new-test-btn" class="action-btn primary">
+                        <i class="fas fa-plus-circle"></i> New Test
+                    </button>
+                    <button id="home-results-btn" class="action-btn">
+                        <i class="fas fa-home"></i> Back  Home
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>Cozy English Academy &copy; <span id="current-year">2023</span> | Designed by Farangis Rajabova</p>
+            <p class="footer-note">Practice makes perfect! Keep learning English every day. 📚</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
