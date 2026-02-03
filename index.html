@@ -1,0 +1,1108 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Learning - English & Tajik</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* CSS Variables */
+        :root {
+            --primary-color: #4f46e5;
+            --primary-light: #818cf8;
+            --primary-dark: #3730a3;
+            --secondary-color: #10b981;
+            --secondary-light: #34d399;
+            --secondary-dark: #059669;
+            --gray-50: #f9fafb;
+            --gray-100: #f3f4f6;
+            --gray-200: #e5e7eb;
+            --gray-300: #d1d5db;
+            --gray-400: #9ca3af;
+            --gray-500: #6b7280;
+            --gray-600: #4b5563;
+            --gray-700: #374151;
+            --gray-800: #1f2937;
+            --gray-900: #111827;
+            --success-color: #10b981;
+            --error-color: #ef4444;
+            --font-heading: 'Poppins', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            --spacing-sm: 0.5rem;
+            --spacing-md: 1rem;
+            --spacing-lg: 1.5rem;
+            --spacing-xl: 2rem;
+            --radius-md: 0.5rem;
+            --radius-lg: 0.75rem;
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--gray-50);
+            color: var(--gray-800);
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+        }
+
+        /* Header */
+        .header {
+            background: white;
+            box-shadow: var(--shadow-md);
+            padding: var(--spacing-md) 0;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: var(--spacing-md);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .logo i {
+            font-size: 1.75rem;
+        }
+
+        .nav-list {
+            display: flex;
+            list-style: none;
+            gap: var(--spacing-sm);
+        }
+
+        .nav-btn {
+            background: none;
+            border: none;
+            padding: var(--spacing-sm) var(--spacing-md);
+            border-radius: var(--radius-md);
+            font-family: var(--font-body);
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--gray-600);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+
+        .nav-btn:hover {
+            background: var(--gray-100);
+        }
+
+        .nav-btn.active {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: var(--spacing-xl) 0;
+            min-height: 70vh;
+        }
+
+        .section {
+            display: none;
+        }
+
+        .section.active {
+            display: block;
+            animation: fadeIn 0.3s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Home Section */
+        .home-hero {
+            text-align: center;
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .home-hero h2 {
+            font-size: 2rem;
+            margin-bottom: var(--spacing-sm);
+            color: var(--gray-900);
+        }
+
+        .action-grid {
+            display: grid;
+            gap: var(--spacing-xl);
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .action-group-title {
+            text-align: center;
+            margin-bottom: var(--spacing-lg);
+            color: var(--gray-700);
+        }
+
+        .action-buttons {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-md);
+        }
+
+        .action-btn {
+            background: white;
+            border: 2px solid var(--gray-200);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-lg);
+            cursor: pointer;
+            text-align: left;
+            display: flex;
+            align-items: flex-start;
+            gap: var(--spacing-md);
+            width: 100%;
+            transition: all 0.2s ease;
+        }
+
+        .action-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .test-btn {
+            border-color: var(--primary-light);
+        }
+
+        .test-btn .action-btn-icon {
+            background: var(--primary-light);
+            color: var(--primary-color);
+        }
+
+        .reference-btn {
+            border-color: var(--secondary-light);
+        }
+
+        .reference-btn .action-btn-icon {
+            background: var(--secondary-light);
+            color: var(--secondary-color);
+        }
+
+        .action-btn-icon {
+            background: var(--gray-100);
+            width: 48px;
+            height: 48px;
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .action-btn-icon i {
+            font-size: 1.5rem;
+        }
+
+        .action-btn-content h4 {
+            margin-bottom: var(--spacing-xs);
+            color: var(--gray-900);
+        }
+
+        .action-btn-content p {
+            font-size: 0.875rem;
+            color: var(--gray-600);
+        }
+
+        /* Topics Grid */
+        .topics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-lg);
+        }
+
+        .topic-card {
+            background: white;
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-lg);
+            border: 1px solid var(--gray-200);
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .topic-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary-light);
+        }
+
+        .topic-card-header {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .topic-card-id {
+            background: var(--primary-light);
+            color: var(--primary-dark);
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.875rem;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+
+        .topic-card-title {
+            font-size: 1.125rem;
+            margin-bottom: 4px;
+            color: var(--gray-900);
+        }
+
+        .topic-card-description {
+            font-size: 0.875rem;
+            color: var(--gray-600);
+        }
+
+        .topic-card-stats {
+            display: flex;
+            gap: var(--spacing-md);
+            font-size: 0.75rem;
+            color: var(--gray-500);
+            margin-top: var(--spacing-sm);
+        }
+
+        /* Section Header */
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .back-btn {
+            background: var(--gray-100);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .back-btn:hover {
+            background: var(--gray-200);
+        }
+
+        .section-header h2 {
+            flex: 1;
+            color: var(--gray-900);
+        }
+
+        /* Grammar Topic Detail */
+        .topic-detail-container {
+            background: white;
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-xl);
+            box-shadow: var(--shadow-md);
+            margin-top: var(--spacing-md);
+        }
+
+        .topic-detail-container h3 {
+            color: var(--gray-800);
+            margin-bottom: var(--spacing-md);
+            padding-bottom: var(--spacing-sm);
+            border-bottom: 2px solid var(--gray-100);
+        }
+
+        .topic-description {
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .topic-description p {
+            margin-bottom: var(--spacing-md);
+            line-height: 1.6;
+        }
+
+        .detail-card {
+            background: var(--gray-50);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-lg);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .detail-card h4 {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-md);
+            color: var(--gray-700);
+        }
+
+        .keyword-list {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-xs);
+        }
+
+        .keyword-list li {
+            background: var(--gray-200);
+            color: var(--gray-700);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.875rem;
+        }
+
+        /* Examples */
+        .examples-list {
+            margin-top: var(--spacing-xl);
+        }
+
+        .example-item {
+            padding: var(--spacing-md);
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .example-item:last-child {
+            border-bottom: none;
+        }
+
+        .example-english {
+            font-weight: 500;
+            margin-bottom: 4px;
+            color: var(--gray-900);
+        }
+
+        .example-tajik {
+            color: var(--gray-600);
+            font-style: italic;
+        }
+
+        /* Vocabulary Detail */
+        .vocabulary-detail-container {
+            background: white;
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-xl);
+            box-shadow: var(--shadow-md);
+            margin-top: var(--spacing-md);
+        }
+
+        .vocabulary-words {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: var(--spacing-md);
+        }
+
+        .vocabulary-item {
+            padding: var(--spacing-md);
+            border: 1px solid var(--gray-200);
+            border-radius: var(--radius-md);
+        }
+
+        .word-pair {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .word-english {
+            font-weight: 600;
+            color: var(--gray-900);
+        }
+
+        .word-tajik {
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+
+        .word-example {
+            font-size: 0.875rem;
+            color: var(--gray-600);
+            margin-top: 8px;
+            padding-top: 8px;
+            border-top: 1px dashed var(--gray-200);
+        }
+
+        /* Buttons */
+        .btn {
+            padding: var(--spacing-sm) var(--spacing-lg);
+            border: none;
+            border-radius: var(--radius-md);
+            font-family: var(--font-body);
+            font-size: 0.875rem;
+            font-weight: 500;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+        }
+
+        .practice-topic-btn {
+            white-space: nowrap;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--gray-900);
+            color: var(--gray-300);
+            padding: var(--spacing-xl) 0;
+            margin-top: auto;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-xl);
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .footer-info h3 {
+            color: white;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .footer-note {
+            font-size: 0.875rem;
+            color: var(--gray-400);
+            margin-top: var(--spacing-sm);
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-sm);
+        }
+
+        .footer-link {
+            color: var(--gray-400);
+            text-decoration: none;
+            background: none;
+            border: none;
+            font-family: var(--font-body);
+            font-size: 0.875rem;
+            cursor: pointer;
+            text-align: left;
+            padding: 0;
+        }
+
+        .footer-link:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: var(--spacing-xl);
+            border-top: 1px solid var(--gray-800);
+            font-size: 0.875rem;
+            color: var(--gray-500);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .action-buttons {
+                grid-template-columns: 1fr;
+            }
+            
+            .topics-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: var(--spacing-sm);
+            }
+            
+            .practice-topic-btn {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="logo">
+                    <i class="fas fa-language"></i>
+                    <span>Language Learner</span>
+                </h1>
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li><button class="nav-btn active" data-section="home">
+                            <i class="fas fa-home"></i> Home
+                        </button></li>
+                        <li><button class="nav-btn" data-section="grammar-reference">
+                            <i class="fas fa-book-open"></i> Grammar
+                        </button></li>
+                        <li><button class="nav-btn" data-section="vocabulary-reference">
+                            <i class="fas fa-list-ul"></i> Vocabulary
+                        </button></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Home Section -->
+            <section id="home-section" class="section active">
+                <div class="home-hero">
+                    <h2>Learn English with Tajik Translations</h2>
+                    <p>Interactive grammar and vocabulary exercises</p>
+                </div>
+                
+                <div class="action-grid">
+                    <div class="action-group">
+                        <h3 class="action-group-title">Test Your Knowledge</h3>
+                        <div class="action-buttons">
+                            <button class="action-btn test-btn" id="grammar-test-btn">
+                                <div class="action-btn-icon">
+                                    <i class="fas fa-spell-check"></i>
+                                </div>
+                                <div class="action-btn-content">
+                                    <h4>Grammar Test</h4>
+                                    <p>Practice English grammar rules</p>
+                                </div>
+                            </button>
+                            
+                            <button class="action-btn test-btn" id="vocabulary-test-btn">
+                                <div class="action-btn-icon">
+                                    <i class="fas fa-book"></i>
+                                </div>
+                                <div class="action-btn-content">
+                                    <h4>Vocabulary Test</h4>
+                                    <p>Test your vocabulary knowledge</p>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="action-group">
+                        <h3 class="action-group-title">Reference Materials</h3>
+                        <div class="action-buttons">
+                            <button class="action-btn reference-btn" id="grammar-reference-btn">
+                                <div class="action-btn-icon">
+                                    <i class="fas fa-graduation-cap"></i>
+                                </div>
+                                <div class="action-btn-content">
+                                    <h4>Grammar Reference</h4>
+                                    <p>Detailed explanations and examples</p>
+                                </div>
+                            </button>
+                            
+                            <button class="action-btn reference-btn" id="vocabulary-reference-btn">
+                                <div class="action-btn-icon">
+                                    <i class="fas fa-list-alt"></i>
+                                </div>
+                                <div class="action-btn-content">
+                                    <h4>Vocabulary Reference</h4>
+                                    <p>Word lists with translations</p>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="text-align: center; margin-top: 3rem; color: var(--gray-600);">
+                    <p>Select Grammar or Vocabulary Reference to view learning materials</p>
+                </div>
+            </section>
+
+            <!-- Grammar Reference Section -->
+            <section id="grammar-reference-section" class="section">
+                <div class="section-header">
+                    <button class="back-btn">
+                        <i class="fas fa-arrow-left"></i>
+                    </button>
+                    <h2>Grammar Reference</h2>
+                </div>
+                
+                <div class="topics-grid" id="grammar-topics-grid">
+                    <!-- Will be filled by JavaScript -->
+                </div>
+            </section>
+
+            <!-- Grammar Topic Detail Section -->
+            <section id="grammar-topic-detail-section" class="section">
+                <div class="section-header">
+                    <button class="back-btn">
+                        <i class="fas fa-arrow-left"></i>
+                    </button>
+                    <h2 id="grammar-topic-title">Grammar Topic</h2>
+                    <button class="btn btn-primary practice-topic-btn">
+                        <i class="fas fa-play-circle"></i> Practice This Topic
+                    </button>
+                </div>
+                
+                <div class="topic-detail-container">
+                    <div class="topic-description">
+                        <h3>Explanation</h3>
+                        <p id="grammar-explanation">Loading...</p>
+                        
+                        <h3>Form / Structure</h3>
+                        <p id="grammar-form">Loading...</p>
+                    </div>
+                    
+                    <div class="detail-card">
+                        <h4><i class="fas fa-key"></i> Keywords / Signal Words</h4>
+                        <ul id="grammar-keywords" class="keyword-list">
+                            <li>Loading...</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="detail-card">
+                        <h4><i class="fas fa-exclamation-triangle"></i> Common Mistakes</h4>
+                        <div id="grammar-mistakes">
+                            <p>Loading...</p>
+                        </div>
+                    </div>
+                    
+                    <div class="examples-list">
+                        <h3><i class="fas fa-comment-dots"></i> Example Sentences</h3>
+                        <div id="grammar-examples">
+                            <div class="example-item">
+                                <div class="example-english">Loading example...</div>
+                                <div class="example-tajik">Loading translation...</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Vocabulary Reference Section -->
+            <section id="vocabulary-reference-section" class="section">
+                <div class="section-header">
+                    <button class="back-btn">
+                        <i class="fas fa-arrow-left"></i>
+                    </button>
+                    <h2>Vocabulary Reference</h2>
+                </div>
+                
+                <div class="topics-grid" id="vocabulary-topics-grid">
+                    <!-- Will be filled by JavaScript -->
+                </div>
+            </section>
+
+            <!-- Vocabulary Topic Detail Section -->
+            <section id="vocabulary-topic-detail-section" class="section">
+                <div class="section-header">
+                    <button class="back-btn">
+                        <i class="fas fa-arrow-left"></i>
+                    </button>
+                    <h2 id="vocabulary-topic-title">Vocabulary Topic</h2>
+                    <button class="btn btn-primary practice-topic-btn">
+                        <i class="fas fa-play-circle"></i> Practice This Topic
+                    </button>
+                </div>
+                
+                <div class="vocabulary-detail-container">
+                    <div class="vocabulary-words" id="vocabulary-words-list">
+                        <!-- Will be filled by JavaScript -->
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>Language Learner</h3>
+                    <p>English grammar and vocabulary with Tajik translations</p>
+                    <p class="footer-note">Tajik translations use Latin transcription</p>
+                </div>
+                <div class="footer-links">
+                    <button class="footer-link" id="reset-btn">Reset Data</button>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2023 Language Learner. Educational content is free to use.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Data Store
+        const DataStore = {
+            grammarTopics: [
+                {
+                    id: 1,
+                    title: "Personal Pronouns",
+                    description: "I, you, he, she, it, we, they",
+                    explanation: "Personal pronouns replace nouns used as subjects of sentences.",
+                    form: "Subject pronoun + verb: I am, you are, he is, she is, it is, we are, they are",
+                    keywords: ["I", "you", "he", "she", "it", "we", "they", "subject"],
+                    commonMistakes: [
+                        { 
+                            wrong: "Me am a student.", 
+                            correct: "I am a student.", 
+                            note: "Use 'I' as subject pronoun, not 'me'" 
+                        }
+                    ],
+                    examples: [
+                        { en: "I am a student.", tj: "Man talaba hastam." },
+                        { en: "You are my friend.", tj: "Tu dusti mani." },
+                        { en: "He is a teacher.", tj: "Vay muallim ast." },
+                        { en: "She is from Dushanbe.", tj: "Vay az Dushanbe ast." },
+                        { en: "It is a book.", tj: "In kitob ast." }
+                    ]
+                },
+                {
+                    id: 2,
+                    title: "Verb 'To Be' - Present",
+                    description: "am, is, are",
+                    explanation: "The verb 'to be' is used to describe states, qualities, or identities.",
+                    form: "Subject + am/is/are + complement",
+                    keywords: ["am", "is", "are", "present", "state", "identity"],
+                    commonMistakes: [
+                        { 
+                            wrong: "I is happy.", 
+                            correct: "I am happy.", 
+                            note: "Use 'am' with 'I'" 
+                        }
+                    ],
+                    examples: [
+                        { en: "I am a teacher.", tj: "Man muallim hastam." },
+                        { en: "You are my friend.", tj: "Tu dusti mani." },
+                        { en: "He is from Tajikistan.", tj: "Vay az Tojikiston ast." },
+                        { en: "She is intelligent.", tj: "Vay zebo ast." },
+                        { en: "It is cold today.", tj: "Imruz havzo sard ast." }
+                    ]
+                }
+            ],
+            
+            vocabularyTopics: [
+                {
+                    id: 1,
+                    title: "Personal Pronouns",
+                    description: "I, you, he, she, it, we, they",
+                    words: [
+                        { en: "I", tj: "man", example_en: "I am here.", example_tj: "Man incho hastam." },
+                        { en: "you (singular)", tj: "tu / shumo", example_en: "You are kind.", example_tj: "Tu mehru bon hasti." },
+                        { en: "he", tj: "vay", example_en: "He is my brother.", example_tj: "Vay barodari man ast." },
+                        { en: "she", tj: "vay", example_en: "She is a teacher.", example_tj: "Vay muallim ast." },
+                        { en: "it", tj: "in / on", example_en: "It is a book.", example_tj: "In kitob ast." }
+                    ]
+                },
+                {
+                    id: 2,
+                    title: "Verb 'To Be' - Present",
+                    description: "am, is, are",
+                    words: [
+                        { en: "am", tj: "hastam", example_en: "I am happy.", example_tj: "Man khush hastam." },
+                        { en: "is", tj: "ast / hast", example_en: "He is here.", example_tj: "Vay incho ast." },
+                        { en: "are", tj: "hasted / hastand", example_en: "You are kind.", example_tj: "Tu mehru bon hasti." },
+                        { en: "to be", tj: "budan", example_en: "To be or not to be.", example_tj: "Budan yoki nabudan." },
+                        { en: "being", tj: "budan", example_en: "Human being.", example_tj: "Odami budan." }
+                    ]
+                }
+            ]
+        };
+
+        // UI Controller
+        const UIController = {
+            currentSection: 'home',
+            
+            init: function() {
+                console.log('App initialized');
+                this.setupEventListeners();
+                this.renderGrammarTopics();
+                this.renderVocabularyTopics();
+                this.showSection('home');
+            },
+            
+            setupEventListeners: function() {
+                // Navigation buttons
+                document.querySelectorAll('.nav-btn').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        const section = e.currentTarget.dataset.section;
+                        this.showSection(section);
+                    });
+                });
+                
+                // Back buttons
+                document.querySelectorAll('.back-btn').forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        this.goBack();
+                    });
+                });
+                
+                // Home action buttons
+                document.getElementById('grammar-reference-btn').addEventListener('click', () => {
+                    this.showSection('grammar-reference');
+                });
+                
+                document.getElementById('vocabulary-reference-btn').addEventListener('click', () => {
+                    this.showSection('vocabulary-reference');
+                });
+                
+                // Grammar test button
+                document.getElementById('grammar-test-btn').addEventListener('click', () => {
+                    alert('Grammar Test feature will be implemented soon!');
+                });
+                
+                // Vocabulary test button
+                document.getElementById('vocabulary-test-btn').addEventListener('click', () => {
+                    alert('Vocabulary Test feature will be implemented soon!');
+                });
+                
+                // Practice buttons
+                document.querySelectorAll('.practice-topic-btn').forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        alert('Practice test for this topic will start soon!');
+                    });
+                });
+                
+                // Reset button
+                document.getElementById('reset-btn').addEventListener('click', () => {
+                    if (confirm('Reset all data?')) {
+                        localStorage.clear();
+                        location.reload();
+                    }
+                });
+            },
+            
+            showSection: function(sectionId) {
+                // Hide all sections
+                document.querySelectorAll('.section').forEach(section => {
+                    section.classList.remove('active');
+                });
+                
+                // Update nav buttons
+                document.querySelectorAll('.nav-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                    if (btn.dataset.section === sectionId) {
+                        btn.classList.add('active');
+                    }
+                });
+                
+                // Show target section
+                const section = document.getElementById(sectionId + '-section');
+                if (section) {
+                    section.classList.add('active');
+                    this.currentSection = sectionId;
+                    
+                    // Update page title
+                    document.title = this.getSectionTitle(sectionId) + ' - Language Learner';
+                }
+            },
+            
+            getSectionTitle: function(sectionId) {
+                const titles = {
+                    'home': 'Home',
+                    'grammar-reference': 'Grammar Reference',
+                    'vocabulary-reference': 'Vocabulary Reference'
+                };
+                return titles[sectionId] || 'Language Learner';
+            },
+            
+            goBack: function() {
+                if (this.currentSection === 'grammar-topic-detail') {
+                    this.showSection('grammar-reference');
+                } else if (this.currentSection === 'vocabulary-topic-detail') {
+                    this.showSection('vocabulary-reference');
+                } else {
+                    this.showSection('home');
+                }
+            },
+            
+            renderGrammarTopics: function() {
+                const grid = document.getElementById('grammar-topics-grid');
+                if (!grid) return;
+                
+                grid.innerHTML = '';
+                
+                DataStore.grammarTopics.forEach(topic => {
+                    const card = document.createElement('div');
+                    card.className = 'topic-card';
+                    card.innerHTML = `
+                        <div class="topic-card-header">
+                            <div class="topic-card-id">${topic.id}</div>
+                            <div>
+                                <h3 class="topic-card-title">${topic.title}</h3>
+                                <p class="topic-card-description">${topic.description}</p>
+                            </div>
+                        </div>
+                        <div class="topic-card-stats">
+                            <span><i class="fas fa-comment"></i> ${topic.examples.length} examples</span>
+                        </div>
+                    `;
+                    
+                    card.addEventListener('click', () => {
+                        this.showGrammarTopicDetail(topic.id);
+                    });
+                    
+                    grid.appendChild(card);
+                });
+            },
+            
+            renderVocabularyTopics: function() {
+                const grid = document.getElementById('vocabulary-topics-grid');
+                if (!grid) return;
+                
+                grid.innerHTML = '';
+                
+                DataStore.vocabularyTopics.forEach(topic => {
+                    const card = document.createElement('div');
+                    card.className = 'topic-card';
+                    card.innerHTML = `
+                        <div class="topic-card-header">
+                            <div class="topic-card-id">${topic.id}</div>
+                            <div>
+                                <h3 class="topic-card-title">${topic.title}</h3>
+                                <p class="topic-card-description">${topic.description}</p>
+                            </div>
+                        </div>
+                        <div class="topic-card-stats">
+                            <span><i class="fas fa-list"></i> ${topic.words.length} words</span>
+                        </div>
+                    `;
+                    
+                    card.addEventListener('click', () => {
+                        this.showVocabularyTopicDetail(topic.id);
+                    });
+                    
+                    grid.appendChild(card);
+                });
+            },
+            
+            showGrammarTopicDetail: function(topicId) {
+                const topic = DataStore.grammarTopics.find(t => t.id === topicId);
+                if (!topic) return;
+                
+                // Update title
+                document.getElementById('grammar-topic-title').textContent = topic.title;
+                
+                // Update explanation
+                document.getElementById('grammar-explanation').textContent = topic.explanation;
+                document.getElementById('grammar-form').textContent = topic.form;
+                
+                // Update keywords
+                const keywordsList = document.getElementById('grammar-keywords');
+                keywordsList.innerHTML = '';
+                topic.keywords.forEach(keyword => {
+                    const li = document.createElement('li');
+                    li.textContent = keyword;
+                    keywordsList.appendChild(li);
+                });
+                
+                // Update mistakes
+                const mistakesContainer = document.getElementById('grammar-mistakes');
+                mistakesContainer.innerHTML = '';
+                topic.commonMistakes.forEach(mistake => {
+                    const div = document.createElement('div');
+                    div.style.marginBottom = '1rem';
+                    div.innerHTML = `
+                        <p><strong>Wrong:</strong> ${mistake.wrong}</p>
+                        <p><strong>Correct:</strong> ${mistake.correct}</p>
+                        <p><em>${mistake.note}</em></p>
+                    `;
+                    mistakesContainer.appendChild(div);
+                });
+                
+                // Update examples
+                const examplesContainer = document.getElementById('grammar-examples');
+                examplesContainer.innerHTML = '';
+                topic.examples.forEach(example => {
+                    const div = document.createElement('div');
+                    div.className = 'example-item';
+                    div.innerHTML = `
+                        <div class="example-english">${example.en}</div>
+                        <div class="example-tajik">${example.tj}</div>
+                    `;
+                    examplesContainer.appendChild(div);
+                });
+                
+                this.showSection('grammar-topic-detail');
+            },
+            
+            showVocabularyTopicDetail: function(topicId) {
+                const topic = DataStore.vocabularyTopics.find(t => t.id === topicId);
+                if (!topic) return;
+                
+                // Update title
+                document.getElementById('vocabulary-topic-title').textContent = topic.title;
+                
+                // Update words
+                const wordsContainer = document.getElementById('vocabulary-words-list');
+                wordsContainer.innerHTML = '';
+                
+                topic.words.forEach(word => {
+                    const div = document.createElement('div');
+                    div.className = 'vocabulary-item';
+                    
+                    let exampleHTML = '';
+                    if (word.example_en && word.example_tj) {
+                        exampleHTML = `
+                            <div class="word-example">
+                                <div>${word.example_en}</div>
+                                <div>${word.example_tj}</div>
+                            </div>
+                        `;
+                    }
+                    
+                    div.innerHTML = `
+                        <div class="word-pair">
+                            <span class="word-english">${word.en}</span>
+                            <span class="word-tajik">${word.tj}</span>
+                        </div>
+                        ${exampleHTML}
+                    `;
+                    
+                    wordsContainer.appendChild(div);
+                });
+                
+                this.showSection('vocabulary-topic-detail');
+            }
+        };
+
+        // Initialize app when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            UIController.init();
+        });
+    </script>
+</body>
+</html>
